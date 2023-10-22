@@ -121,3 +121,38 @@ var Teacher = /** @class */ (function () {
 var teacher = new Teacher('Abubakar');
 var teacherName = teacher.getName();
 console.log('teacherName:', teacherName);
+// if pass number then the type will be number
+var Generic = {
+    name: 10,
+};
+function createArray(val1, val2) {
+    return [val1, val2];
+}
+var myArr = createArray('Abubakar', 20);
+console.log('Generic ARr', myArr);
+var axis = {
+    x: 10,
+};
+// Required
+// Required changes all the properties in an object to be required.
+var myAxis = {
+    x: 10,
+    y: 10,
+};
+// Record
+// Record is a shortcut to defining an object type with a specific key type and value type.
+var record = {
+    fullMarks: 10,
+    obtainedMarks: 8,
+};
+console.log('record:', record);
+// Omit
+// Omit removes keys from an object type.
+var myRecord = {
+    y: 10,
+};
+// Pick
+//Pick removes all but the specified keys from an object type.
+var myPickRecord = {
+    x: 10,
+};

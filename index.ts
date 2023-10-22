@@ -198,3 +198,69 @@ const teacher = new Teacher('Abubakar');
 
 const teacherName = teacher.getName();
 console.log('teacherName:', teacherName);
+
+// Generic Concepts
+
+type Wrapped<T> = {
+  name: T;
+};
+
+// if pass number then the type will be number
+
+const Generic: Wrapped<number> = {
+  name: 10,
+};
+
+function createArray<T, S>(val1: T, val2: S): [T, S] {
+  return [val1, val2];
+}
+
+let myArr = createArray<string, number>('Abubakar', 20);
+
+console.log('Generic ARr', myArr);
+
+// Partial
+// Partial changes all the properties in an object to be optional.
+interface point {
+  x: number;
+  y: number;
+}
+
+const axis: Partial<point> = {
+  x: 10,
+};
+
+// Required
+
+// Required changes all the properties in an object to be required.
+const myAxis: Required<point> = {
+  x: 10,
+  y: 10,
+};
+
+// Record
+
+// Record is a shortcut to defining an object type with a specific key type and value type.
+
+const record: Record<string, number> = {
+  fullMarks: 10,
+  obtainedMarks: 8,
+};
+
+console.log('record:', record);
+
+// Omit
+
+// Omit removes keys from an object type.
+
+const myRecord: Omit<point, 'x'> = {
+  y: 10,
+};
+
+// Pick
+
+//Pick removes all but the specified keys from an object type.
+
+const myPickRecord: Pick<point, 'x'> = {
+  x: 10,
+};
